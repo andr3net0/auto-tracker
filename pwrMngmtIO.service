@@ -1,0 +1,15 @@
+# Copyright (c) 2017 Logicc Systems Ltd.
+# Author: Andre Neto
+# based on Daniel Bull's LiPoPi project - https://github.com/NeonHorizon/lipopi
+# systemd service file for LiPoPi button and low battery shutdown script
+# change the /home/pi paths to suite your configuration
+
+[Service]
+ExecStart=/usr/bin/python /home/pi/auto-tracker/pwrMngmtIO.py
+WorkingDirectory=/home/pi/auto-tracker/
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
